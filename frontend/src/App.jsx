@@ -10,8 +10,8 @@ function App() {
         <h2 style={{ marginTop: 0 }}>Thought Stream</h2>
         <p className="text-secondary">Agent execution timeline will appear here in Phase 3.</p>
         <div style={{ fontFamily: 'monospace', marginTop: '20px', padding: '16px', background: 'rgba(0,0,0,0.3)', borderRadius: '8px' }}>
-          > System initialized...<br/>
-          > Waiting for anomalies...
+          {'>'} System initialized...<br/>
+          {'>'} Waiting for anomalies...
         </div>
       </div>
 
