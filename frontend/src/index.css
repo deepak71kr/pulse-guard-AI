@@ -1,0 +1,129 @@
+:root {
+  --bg-color: #0f1115; /* Pure Slate Dark */
+  --panel-bg: rgba(255, 255, 255, 0.03);
+  --panel-border: rgba(255, 255, 255, 0.08);
+  --text-primary: #f5f5f7;
+  --text-secondary: #86868b;
+  
+  --accent-normal: #34c759; /* Soft Emerald */
+  --accent-warning: #ff9f0a; /* Amber */
+  --accent-critical: #ff453a; /* Crimson */
+  --accent-blue: #0a84ff;
+  
+  --font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* Typography Utilities */
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-normal { color: var(--accent-normal); }
+.text-warning { color: var(--accent-warning); }
+.text-critical { color: var(--accent-critical); }
+
+/* Glassmorphism Panel */
+.glass-panel {
+  background: var(--panel-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--panel-border);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+/* Layout */
+.app-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+  gap: 24px;
+  box-sizing: border-box;
+}
+
+.left-panel {
+  flex: 0 0 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+}
+
+.center-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.right-panel {
+  flex: 0 0 400px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Vitals Cards */
+.vitals-card {
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease-in-out;
+}
+
+.vitals-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.vitals-title {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-secondary);
+}
+
+.vitals-value {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.vitals-unit {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-left: 4px;
+}
+
+/* Dynamic State Classes */
+.card-normal {
+  border-left: 4px solid var(--accent-normal);
+}
+.card-warning {
+  border-left: 4px solid var(--accent-warning);
+  background: rgba(255, 159, 10, 0.05);
+}
+.card-critical {
+  border-left: 4px solid var(--accent-critical);
+  background: rgba(255, 69, 58, 0.1);
+}
