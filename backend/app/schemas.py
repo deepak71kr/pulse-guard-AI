@@ -16,3 +16,7 @@ class ClinicalRecommendation(BaseModel):
     dosage_guidance: Optional[str] = Field(None, description="Recommended dosage if applicable")
     reasoning: str = Field(..., description="Brief explanation for the recommendation")
     source_guideline: Optional[str] = Field(None, description="The RAG text snippet backing this decision")
+
+class TriageResult(BaseModel):
+    anomalies: list[str] = Field(..., description="List of detected anomalies, e.g., Tachycardia, Hypotension")
+    condition: str = Field(..., description="Synthesized clinical condition, e.g., Suspected Sepsis, Hypoxia, Bradycardia, or Normal")

@@ -13,7 +13,7 @@ class LocalVectorStore:
         if not api_key:
             print("WARNING: GEMINI_API_KEY not set in environment.")
             
-        self.embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
+        self.embeddings = GoogleGenerativeAIEmbeddings(model="models/gemini-embedding-001")
         
         self.vectorstore = Chroma(
             collection_name="clinical_guidelines",
